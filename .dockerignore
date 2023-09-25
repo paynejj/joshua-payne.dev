@@ -1,0 +1,17 @@
+# Common junk
+.git
+.gitignore
+.prettierrc.json
+.eslintrc.json
+.DS_Store
+.vscode
+.idea
+
+# Stuff that matters
+build
+dist
+node_modules
+Dockerfile
+*.Dockerfile
+docker-compose.yaml
+*.docker-compose.yaml

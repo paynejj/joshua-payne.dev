@@ -1,0 +1,16 @@
+services:
+  landing:
+    build:
+      context: landing
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./landing:/app
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "3000:80"
+    depends_on:
+      - landing
