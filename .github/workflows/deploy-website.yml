@@ -20,4 +20,5 @@ jobs:
             cd ~/repos/joshua-payne.dev
             git pull --rebase
             docker compose -f prod.docker-compose.yaml down
-            docker compose -f prod.docker-compose.yaml up
+            docker compose -f prod.docker-compose.yaml up -d
+
