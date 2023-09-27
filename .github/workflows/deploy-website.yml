@@ -21,3 +21,4 @@ jobs:
             git pull --rebase
             docker compose -f prod.docker-compose.yaml down
             docker compose -f prod.docker-compose.yaml up -d
+
