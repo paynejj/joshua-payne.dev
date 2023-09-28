@@ -14,8 +14,8 @@ This site will host all my little projects, and maybe a bio
 
 | **Feature**         | **Status** |
 | ------------------- | :--------: |
-| Landing Page / UI   |     ❌     |
-| CI/CD Pipeline      |     ⏳     |
+| Landing Page / UI   |     ⏳     |
+| CI/CD Pipeline      |     ✔️      |
 | Web API             |     ❌     |
 | WASM Games          |     ❌     |
 | Docker Image        |     ❌     |
