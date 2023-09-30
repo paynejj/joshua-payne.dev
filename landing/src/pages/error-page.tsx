@@ -1,11 +1,12 @@
+import { Center } from "@mantine/core";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
-export default function ErrorPage() {
+function ErrorPage() {
   const error = useRouteError();
   console.error(error);
 
   return (
-    <div id="error-page">
+    <Center style={{ flexGrow: 1 }}>
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
@@ -15,6 +16,8 @@ export default function ErrorPage() {
             "Unknown Error Occurred"
           )}
       </p>
-    </div>
+    </Center>
   );
 }
+
+export default ErrorPage;

@@ -1,19 +1,17 @@
-import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Root from "./routes/root";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from "./error-page";
+import App from "./App";
+import { createTheme, MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
+import "./global.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-  },
-]);
+const theme = createTheme({
+  fontFamily: "Open Sans, sans-serif",
+});
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MantineProvider defaultColorScheme="dark" theme={theme}>
+      <App />
+    </MantineProvider>
   </React.StrictMode>,
 );
