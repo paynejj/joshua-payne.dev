@@ -1,0 +1,20 @@
+.sections {
+  height: var(--mantine-main-height);
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+}
+.sections .section:nth-child(even) {
+  background-color: var(--mantine-primary-color-filled);
+  color: var(--mantine-text-light);
+}
+
+.section {
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.indicator {
+  position: fixed;
+  top: 50%;
+  right: 2%;
+}

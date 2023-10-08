@@ -1,8 +1,6 @@
+import { ErrorPage, Home, NoMatch } from "pages";
+import { Layout } from "components";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/home";
-import NoMatch from "./no-match";
-import ErrorPage from "./pages/error-page";
-import Layout from "./components/layout";
 import { Loader } from "@mantine/core";
 
 const router = createBrowserRouter([

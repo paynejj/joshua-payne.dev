@@ -1,6 +1,6 @@
 import { Box, Center, Text, Title } from "@mantine/core";
 
-export default function NoMatch() {
+function NoMatch() {
   return (
     <Center style={{ flex: "1" }}>
       <Box>
@@ -10,3 +10,5 @@ export default function NoMatch() {
     </Center>
   );
 }
+
+export default NoMatch;
