@@ -10,7 +10,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Pull and Deploy
+      - name: Pull and Redeploy
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SERVER_IP }}
@@ -18,9 +18,9 @@ jobs:
           key: ${{ secrets.SERVER_PRIV_KEY }}
           script: |
             cd ~/repos/joshua-payne.dev
-            git pull --rebase
             docker compose -f prod.docker-compose.yaml down
-            docker compose -f prod.docker-compose.yaml up -d
+            git pull --rebase
+            docker compose -f prod.docker-compose.yaml up --build --detach
 
       - name: Test Website Connection
         run: |
