@@ -1,8 +1,8 @@
-import { useState } from "react";
-import "./App.css";
+import { useState } from 'react'
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -13,12 +13,12 @@ function App() {
         </button>
         <p>
           Check back in a couple days! I left you a button in case you get
-          bored. See my progress at{" "}
+          bored. See my progress at{' '}
           <a href="https://github.com/paynejj/joshua-payne.dev">github</a>
         </p>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
