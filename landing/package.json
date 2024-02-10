@@ -8,10 +8,20 @@
     "build": "tsc && vite build",
     "dev": "vite",
     "format": "prettier . --write --ignore-unknown",
-    "lint": "eslint . --fix",
+    "lint": "eslint . --fix --rule 'import/no-cycle: off'",
     "preview": "vite preview",
     "start": "node server.cjs",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "cd .. && husky landing/.husky"
+  },
+  "lint-staged": {
+    "!*.{ts,tsx}": "prettier --write --ignore-unknown --list-different",
+    "*.{ts,tsx}": [
+      "madge --circular src/main.tsx",
+      "eslint --fix --quiet --rule 'import/no-cycle: off'",
+      "prettier --write",
+      "tsc-files --noEmit"
+    ]
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -24,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react-swc": "^3.6.0",
+    "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
@@ -34,9 +45,11 @@
     "husky": "^9.0.10",
     "lint-staged": "^15.2.2",
     "madge": "^6.1.0",
+    "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
     "tailwindcss": "^3.4.1",
+    "tsc-files": "^1.1.4",
     "typescript": "^5.3.3",
     "vite": "^5.1.1",
     "vite-tsconfig-paths": "^4.3.1",

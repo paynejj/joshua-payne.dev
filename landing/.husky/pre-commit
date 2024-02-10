@@ -1,0 +1,6 @@
+#! /bin/sh
+landing_dir="landing"
+cd $landing_dir || exit 1
+# run pre-commit only on files changed in landing
+git show --oneline --name-only | grep "$landing_dir" >/dev/null || exit 0
+npx lint-staged

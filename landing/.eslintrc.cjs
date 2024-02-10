@@ -7,9 +7,14 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'plugin:import/recommended',
-    'plugin:path/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'server.*js'],
+  ignorePatterns: [
+    'dist',
+    '.eslintrc.cjs',
+    'server.*js',
+    'tailwind.config.js',
+    'postcss.config.js',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -31,5 +36,6 @@ module.exports = {
       'warn',
       { allowSameFolder: true, rootDir: 'src' },
     ],
+    'import/no-cycle': 'warn',
   },
 }

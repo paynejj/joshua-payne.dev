@@ -9,5 +9,10 @@ export default defineConfig({
   test: {},
   server: {
     port: 3000,
+    open: true,
+  },
+  preview: {
+    port: 3030,
+    open: true,
   },
 })
