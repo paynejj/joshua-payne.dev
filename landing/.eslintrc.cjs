@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'plugin:import/recommended',
+    'plugin:import/typescript',
   ],
   ignorePatterns: [
     'dist',
@@ -22,7 +23,13 @@ module.exports = {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react-refresh', 'no-relative-import-paths'],
+  plugins: ['react-refresh', 'no-relative-import-paths', 'import'],
+  settings: {
+    'import/resolver': {
+      typescript: true,
+      node: true,
+    },
+  },
   rules: {
     // replaced by typescript-eslint
     'no-unused-vars': 'off',

@@ -1,23 +1,15 @@
-import { useState } from 'react'
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from 'react-router-dom'
+import Loading from 'routes/Loading'
+import routes from 'routes/Routes'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const router = createBrowserRouter(createRoutesFromElements(routes))
 
-  return (
-    <>
-      <h1>Site Under Construction</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Check back in a couple days! I left you a button in case you get
-          bored. See my progress at{' '}
-          <a href="https://github.com/paynejj/joshua-payne.dev">github</a>
-        </p>
-      </div>
-    </>
-  )
+  return <RouterProvider router={router} fallbackElement={<Loading />} />
 }
 
 export default App
