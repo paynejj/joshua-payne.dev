@@ -1,6 +1,8 @@
-import { AppShell, Burger, Group, Text, UnstyledButton } from '@mantine/core'
+import { AppShell, Burger, Group, Image } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { NavLink, Outlet } from 'react-router-dom'
+import logo from 'assets/logo.svg'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 
 function Layout() {
   const [opened, { toggle }] = useDisclosure()
@@ -24,9 +26,20 @@ function Layout() {
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Group justify="space-between" style={{ flex: 1 }}>
-            <UnstyledButton>
-              <Text size="xl">JP</Text>
-            </UnstyledButton>
+            <Link to="/">
+              <Image src={logo} alt="Logo" w={100} />
+            </Link>
+            <Group className="md:absolute md:left-1/2">
+              <Link to="https://github.com/paynejj" target="_blank">
+                <FaGithub className="size-9" />
+              </Link>
+              <Link
+                to="https://www.linkedin.com/in/joshua-payne-7041131b6/"
+                target="_blank"
+              >
+                <FaLinkedin className="size-9" />
+              </Link>
+            </Group>
             <Group ml="xl" className="space-x-2" gap={0} visibleFrom="sm">
               {navLinks.map((navLink, idx) => (
                 <NavLink

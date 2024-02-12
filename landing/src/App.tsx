@@ -1,11 +1,11 @@
 import { MantineProvider } from '@mantine/core'
 import '@mantine/core/styles.css'
+import Loading from 'pages/Loading'
 import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom'
-import Loading from 'routes/Loading'
 import routes from 'routes/Routes'
 
 function App() {
